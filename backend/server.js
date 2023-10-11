@@ -14,7 +14,8 @@ app.use(express.json());
 // e.g., app.use('/api/items', require('./routes/itemRoutes'));
 
 app.use(express.static(path.resolve(__dirname, '..', 'dist')));
-
+app.use('/styling.css', express.static(path.resolve(__dirname, '..', 'frontend','src', 'styling.css')));
+app.use('/assets', express.static(path.resolve(__dirname, '..', 'frontend','assets')))
 app.use('/feedback', require('./routes/feedbackRoutes'));
 
 app.get('/', (req, res) => {
