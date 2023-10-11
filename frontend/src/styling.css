@@ -16,7 +16,8 @@ body {
 }
 
 .logo {
-  width: 10%;
+  width: 9%;
+  height: auto;
 }
 .NavBar {
   position: fixed;
@@ -31,25 +32,41 @@ body {
   background-color: #14161d;
   z-index: 2; /* Apply the background color here */
 }
-
+.NavBarButtons{
+  width:60%;
+  height:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .NavButton {
   background: transparent;
   color: #1df28f;
-  border: 1px solid #1df28f;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 1px 2px;
+  font-size: 12px;
+  height:75%;
+  width:max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center; /* Set the transform origin to the center for scaling */
+  transition: transform 0.2s ease-in-out;
   text-decoration: none;
 }
 .NavButton:hover {
-  background-color: #1df28f;
-  color: #14161d;
+  transform: scale(1.1) translateY(-5px); /* Scale and translate vertically */
+  transition: transform 0.2s ease-in-out;
 }
-
+.logos {
+  transform-origin: center;
+  transition: transform 0.2s ease-in-out;
+}
+.logos:hover{
+  transform: scale(1.1) translateY(-5px); /* Scale and translate vertically */
+  transition: transform 0.2s ease-in-out;
+}
 .Title {
   color: #1df28f;
-
 }
 .download-buttons{
   display: flex;
@@ -160,7 +177,6 @@ body {
   }
   #features {
     background-color: #14161d;
-    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,7 +187,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
     gap: 5%; /* Adjust the gap between items */
-    width:75%;
+    width:100%;
     height:60%;
 
     /* Center the items within each grid cell */
@@ -182,11 +198,13 @@ body {
       flex-direction: column;
       border: 2px solid #1df28f;
       border-radius: 10px;
-      padding: 20px;
+      padding: 18x;
       transition: transform 0.3s;
       cursor: pointer;
     }
-  
+    .feature-icon{
+      font-size: 48px;
+    }
     .feature-item:hover {
       transform: scale(1.1); /* Scale on hover */
     }
@@ -196,4 +214,37 @@ body {
       color: #14161d;
       font-size: 12px;
     }
+  }
+  .ProfileContainer{
+    display: flex;
+    width: 100%;
+  }
+ .ProfileImage{
+    height: 100px;
+    width: 100px;
+ }
+  .Profile {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    padding-top: 10px;
+    margin: 5px;
+    border: 1px solid #1df28f;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .IconContainer {
+    justify-self: flex-end;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+  }
+  .ProfileName{
+    display: flex;
+    flex-direction: column;
+  }
+  .ProfileName p {
+    margin: 5px;
   }

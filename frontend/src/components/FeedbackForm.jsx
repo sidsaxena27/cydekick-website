@@ -36,29 +36,32 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className='feedback-container'>
-      <button className="NavButton" onClick={handleToggleForm}>Give Feedback</button>
+    <div data-cy="feedbackForm" className='feedback-container'>
+      <button data-cy="giveFeedback" className="NavButton" onClick={handleToggleForm}>Give Feedback</button>
       {showForm && (
-        <div className="feedback-form">
-          <form onSubmit={handleSubmit} className='FeedBackForm'>
+        <div data-cy="feedbackFormContainer" className="feedback-form">
+          <form data-cy="FormForFeedback" onSubmit={handleSubmit} className='FeedBackForm'>
             <input
+              data-cy="nameInput"
               type="text"
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <input
+              data-cy="emailInput"
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <textarea
+              data-cy="feedbackInput"
               placeholder="Feedback"
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
             ></textarea>
-            <button className="NavButton" type="submit">Submit</button>
+            <button data-cy="submitFeedbackButton" className="NavButton" type="submit">Submit</button>
           </form>
         </div>
       )}

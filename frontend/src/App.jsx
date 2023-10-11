@@ -10,7 +10,7 @@ import Team from './components/Team.jsx';
 
 function App() {
   return (
-    <div className="App">
+    <div data-cy="app" className="App">
       <NavBar/>
       <Home/>
       <Features/>
