@@ -1,0 +1,31 @@
+{
+    "name": "mern-boilerplate",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node backend/server.js",
+        "client": "webpack serve --config webpack.config.js --mode development",
+        "build": "webpack --mode production",
+        "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot --progress --color \" \"nodemon ./backend/server.js\""
+    },
+    "dependencies": {
+        "concurrently": "^8.2.1",
+        "cors": "^2.x",
+        "cross-env": "^7.0.3",
+        "express": "^4.x",
+        "mongoose": "^5.x",
+        "nodemon": "^3.0.1",
+        "react": "^17.x",
+        "react-dom": "^17.x",
+        "webpack-hot-middleware": "^2.25.4"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.x",
+        "@babel/preset-env": "^7.x",
+        "@babel/preset-react": "^7.22.15",
+        "babel-loader": "^8.x",
+        "html-webpack-plugin": "^4.x",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
+}
