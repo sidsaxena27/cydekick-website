@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/download/:key', (req, res) =>{
+  console.log(req.params.key)
   const params = {
     Bucket: process.env.BUCKETEER_BUCKET_NAME,
     Key: `/public/${req.params.key}`,
