@@ -1,29 +1,43 @@
 import React from 'react';
+import AWS from 'aws-sdk';
 
 const Home = () =>{ 
+  const downloadFile = (key) => {
+
+const s3 = new AWS.S3({
+  accessKeyId: 'AKIAVVKH7VVULB2JO45H',
+  secretAccessKey: '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',
+  region: 'us-east-1',
+})
   
+    // Specify the S3 bucket and file key you want to download
+    const params = {
+      Bucket: 'bucketeer-8e95956c-51fb-498f-b9a8-65dfa52f709f',
+      Key: `public/${key}`,
+    };
   
-  const downloadFile = (url) => {
-    fetch(url)
-      .then(response => response.blob())
-      .then(blob => {
+    // Use the AWS SDK to download the file directly from S3
+    s3.getObject(params, (err, data) => {
+      if (err) {
+        console.error('Error downloading file:', err);
+      } else {
+        const blob = new Blob([data.Body]);
+  
+        // Create a URL for the blob and trigger the download
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'mac.zip'; // Specify the desired file name
+        a.download = key; // Specify the desired file name
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
-      })
-      .catch(error => {
-        console.error('Error downloading file:', error);
-      });
+      }
+    });
   };
+  
   const handleDownloadMac = () => {
-    downloadFile('/download/mac.zip')
-  }
-
-
+    downloadFile('mac.zip');
+  };
 
   return(
   <section data-cy="home" id="home" className='section'>
