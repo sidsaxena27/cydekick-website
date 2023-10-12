@@ -5,14 +5,14 @@ const Home = () =>{
   const downloadFile = (key) => {
 
 const s3 = new AWS.S3({
-  accessKeyId: 'AKIAVVKH7VVULB2JO45H',
-  secretAccessKey: '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',
+  accessKeyId: '',
+  secretAccessKey: '',
   region: 'us-east-1',
 })
   
     // Specify the S3 bucket and file key you want to download
     const params = {
-      Bucket: 'bucketeer-8e95956c-51fb-498f-b9a8-65dfa52f709f',
+      Bucket: '',
       Key: `public/${key}`,
     };
   
