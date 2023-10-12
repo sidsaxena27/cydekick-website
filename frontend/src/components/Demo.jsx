@@ -7,7 +7,7 @@ const Demo = () => (
       {['Entering your react project and port', 'Visualizing Components', 'Generating tests', 'Previewing and editing tests'].map((text, index) => (
         <div className="video-container" key={index}>
           <p>{text}</p>
-          <img className="demoButton" src={`/assets/DemoGifNew${index + 1}.gif`} alt={`${text} gif`} />
+          <img className="demoButton" src={`/assets/DemoGif${index + 1}.gif`} alt={`${text} gif`} />
         </div>
       ))}
     </div>
