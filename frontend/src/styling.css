@@ -82,6 +82,9 @@ body {
   color: #1df28f;
   border: 1px solid #1df28f;
   border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Comfortaa', sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
