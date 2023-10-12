@@ -33,7 +33,7 @@ app.get('/download/:key', (req, res) =>{
   console.log(process.env.BUCKETEER_BUCKET_NAME)
   const params = {
     Bucket: process.env.BUCKETEER_BUCKET_NAME,
-    Key: `/public/${req.params.key}`,
+    Key: `public/${req.params.key}`,
   }
   s3.getObject(params, (err, data) => {
     if (err) {
