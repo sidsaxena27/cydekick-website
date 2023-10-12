@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #14161d;
+  background-color:  #14161d;
   width:95vw;
   color: #1df28f;
 }
@@ -71,22 +71,31 @@ body {
 .download-buttons{
   display: flex;
   width:66%;
+  align-self: center;
+  justify-self: center;
   justify-content: space-around;
-  margin-top: 5%;
-  height:5%;
+  height:10%;
+  margin: 10px;
 }
 .DownloadButton {
   background: transparent;
   color: #1df28f;
   border: 1px solid #1df28f;
   border-radius: 7px;
+  font-family: 'Comfortaa', sans-serif;
   transition: background-color 0.3s, color 0.3s;
 }
 .DownloadButton:hover {
   background-color: #1df28f;
   color: #14161d;
 }
-
+#formButton{
+  position: fixed;
+  bottom: 0;
+  right:5%;
+  height: fit-content;
+  font-family: 'Comfortaa', sans-serif;
+}
 .feedback-container {
     position: relative;
   }
@@ -96,10 +105,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #048C7F;
+    width: 50vw;
+    height: fit-content;
+    background: linear-gradient(to bottom, #048C7F, #1df28f);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 200px 200px rgba(0, 0, 0, 0.5);
   }
   
   .feedback-form form {
@@ -113,19 +125,34 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
+    resize: none;
+    transition: outline 0.1s ease-in-out;
+    font-family: 'Comfortaa', sans-serif;
   }
-  
+  .feedback-form input:focus,
+.feedback-form textarea:focus {
+  outline: 2px solid #14161d; /* Change the color and width as desired */
+  /* Optionally, you can also change the outline offset and style */
+}
+  .submitclosefeedback{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 5px;
+  }
   .feedback-form button {
-    background-color: #1df28f;
+    background-color: transparent;
     color: #14161d;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #14161d;
     border-radius: 5px;
     cursor: pointer;
+    width: 40%;
+    font-family: 'Comfortaa', sans-serif;
   }
   
   .feedback-form button:hover {
-    background-color: #048C7F;
+    background-color: #14161d;
     color: #1df28f;
   }
 
@@ -247,4 +274,20 @@ body {
   }
   .ProfileName p {
     margin: 5px;
+  }
+  ul li {
+    font-size: 14px;
+    margin: 10px;
+    list-style: none; /* Remove default list bullets */
+    padding-left: 20px; /* Adjust the space for the custom bullet */
+  }
+  ul li::before {
+    content: "\2022"; /* Unicode bullet character (•) */
+    color: #1df28f; /* Color for the bullet */
+    font-size: 16px; /* Adjust the bullet size */
+    margin-right: 5px; /* Adjust the spacing between the bullet and the list item text */
+  }
+  .getStartedContent{
+    display:flex;
+    flex-direction: column;
   }
