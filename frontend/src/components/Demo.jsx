@@ -7,10 +7,7 @@ const Demo = () => (
       {['Entering your react project and port', 'Visualizing Components', 'Generating tests', 'Previewing and editing tests'].map((text, index) => (
         <div className="video-container" key={index}>
           <p>{text}</p>
-          <video controls width="500">
-            <source className="demoButton" src={`/assets/DemoGif${index + 1}.mov`} type="video/mp4"/>
-            Your browser does not support the video tag.
-          </video>
+          <img className="demoButton" src={`/assets/DemoGifNew${index + 1}.gif`} alt={`${text} gif`} />
         </div>
       ))}
     </div>
