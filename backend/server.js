@@ -2,6 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3({
+  accessKeyId: process.env.BUCKETEER_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.BUCKETEER_AWS_SECRET_ACCESS_KEY,
+  region: 'us-east-1',
+})
 
 const app = express();
 
@@ -21,6 +27,23 @@ app.use('/feedback', require('./routes/feedbackRoutes'));
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'dist', 'index.html'));
 });
+
+app.get('/download/:key', (req, res) =>{
+  const params = {
+    Bucket: process.env.BUCKETEER_BUCKET_NAME,
+    Key: req.params.key,
+  }
+  s3.getObject(params, (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error retrieving file from S3');
+    } else {
+      res.setHeader('Content-Disposition', `attachment; filename="${req.params.key}"`);
+      res.setHeader('Content-Type', 'application/zip');
+      res.send(data.Body);
+    }
+  });
+})
 
 
 app.use((req, res, next) => {
