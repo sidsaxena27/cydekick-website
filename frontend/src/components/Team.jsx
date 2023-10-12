@@ -21,8 +21,8 @@ const Team = () => {
     {
       firstname: "Quinn",
       lastname: "Craddock",
-      image: "/assets/logo.png",
-      linkedin: "linkedinURL",
+      image: "/assets/quinn.png",
+      linkedin: "lhttps://github.com/quinnCraddock4",
       github: "https://github.com/quinnCraddock4",
     },
     {
