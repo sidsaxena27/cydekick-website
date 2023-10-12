@@ -291,3 +291,20 @@ body {
     display:flex;
     flex-direction: column;
   }
+
+  .demoButton{
+    height: auto;
+    width: 50%
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .video-container {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
